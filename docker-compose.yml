@@ -1,0 +1,21 @@
+version: '3.0'
+services:
+   backend:
+     image: mothman/shipsbackend:runtime
+     build:
+       context: .
+     ports:
+       - "8080:5000"
+   db:
+    image: mysql:5.7.22
+    restart: always
+    environment:
+      MYSQL_SERVER_NAME: localhost
+      MYSQL_DATABASE: shipsDb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 3306:3306
