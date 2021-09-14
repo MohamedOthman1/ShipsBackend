@@ -12,3 +12,4 @@ This is ships backend example developed using asp.ent core web api and MySQL, an
 * Swagger
 * AutoMapper
 * EF Core
+* Log4net
